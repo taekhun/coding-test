@@ -1,3 +1,5 @@
+import time
+
 N, M = map(int, input().split())
 array = [[] * M for _ in range(N)]  # 2차원 리스트 초기화
 firstArray = []
