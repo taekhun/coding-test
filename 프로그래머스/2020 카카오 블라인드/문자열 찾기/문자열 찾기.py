@@ -2,7 +2,6 @@ import re
 currentIndex = 0
 nextIndex = 0
 count = 0
-# pattern = []
 
 
 def MakePattern(patternStart):
@@ -33,10 +32,11 @@ def ShortenData():
     nextIndex = currentIndex + count
     newPattern = data[currentIndex:nextIndex]
 
-    # print(currentIndex, nextIndex)
+    print(currentIndex, nextIndex)
 
     # pattern count
     pCount = 0
+
     while(nextIndex+count <= len(data)-1):
         if(data[nextIndex:nextIndex+count] != newPattern):
             print(data[nextIndex:nextIndex+count], newPattern)
@@ -68,7 +68,7 @@ def solution(data):
     ShortenData()
     # while(nextIndex+count < len(data)-1):
     #     ShortenData()
-    # print(nextIndex)
+    # # print(nextIndex)
 
     return count
 
