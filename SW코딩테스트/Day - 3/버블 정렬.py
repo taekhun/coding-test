@@ -1,0 +1,6 @@
+N = input()
+N = int(N)
+numList = list(map(int, input().split()))
+a = sorted(numList)
+a = list(map(str, a))
+print(' '.join(a)+' ')
