@@ -1,16 +1,16 @@
 function solution(priorities, location) {
-  const arr = Object.entries(priorities);
-  const stack = [];
+  const arr = priorities.map((v, i) => ({ index: i, value: v }));
+  const queue = [];
 
   while (arr.length) {
-    if (arr.some((a) => arr[0][1] < a[1])) {
+    if (arr.some((a) => arr[0].value < a.value)) {
       arr.push(arr.shift());
     } else {
-      stack.push(arr.shift());
+      queue.push(arr.shift());
     }
   }
 
-  return stack.findIndex((a) => a[0] === String(location)) + 1;
+  return queue.findIndex((a) => a.index === location) + 1;
 }
 
 const case1 = { priorities: [2, 1, 3, 2], location: 2 };
